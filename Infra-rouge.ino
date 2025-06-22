@@ -1,8 +1,10 @@
 #include <DIYables_IRcontroller.h> // DIYables_IRcontroller library
 #define IR_RECEIVER_PIN 6 // Arduino Uno pin connecter au recepteur infrarouge
+//int motor1 = 9; 
+//int motor2 = 3;
 
 int motor1pin1 = 8;
-int motor1pin2 = 9;
+int motor1pin2 = 2;
 
 int motor2pin1 = 12;
 int motor2pin2 = 11;
@@ -12,13 +14,15 @@ DIYables_IRcontroller_21 irController(IR_RECEIVER_PIN, 200); // debounce time is
 void setup() {
   Serial.begin(9600);
   irController.begin();
-
+  //pinMode(motor1, OUTPUT);
+  //pinMode(motor2, OUTPUT);
   pinMode(motor1pin1, OUTPUT);
   pinMode(motor1pin2, OUTPUT);
   pinMode(motor2pin1, OUTPUT);
   pinMode(motor2pin2, OUTPUT);
 
-  //Arrêt des moteurs
+  //analogWrite(motor1, 250);
+  //analogWrite(motor2, 250);
   digitalWrite(motor1pin1, LOW);
   digitalWrite(motor1pin2, LOW);
   digitalWrite(motor2pin1, LOW);
